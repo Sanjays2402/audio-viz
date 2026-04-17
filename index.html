@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AudioViz — real-time sound visualizer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="overlay" class="overlay">
+  <div class="brand">🎵 <strong>AudioViz</strong></div>
+  <p class="tag">Real-time audio visualizer. Grant mic access to start.</p>
+  <button id="start" class="btn primary">Start</button>
+</div>
+<div id="controls" class="controls hidden">
+  <div class="mode-bar">
+    <button class="mode active" data-mode="bars">Spectrum</button>
+    <button class="mode" data-mode="wave">Waveform</button>
+    <button class="mode" data-mode="particles">Particles</button>
+    <button class="mode" data-mode="circular">Circular</button>
+    <button class="mode" data-mode="mirror">Mirror</button>
+  </div>
+  <div class="sensitivity">
+    <label>Sensitivity</label>
+    <input type="range" id="sens" min="1" max="100" value="50">
+  </div>
+  <div class="level">
+    <span>VOL</span>
+    <div class="level-bar"><div id="level-fill" class="level-fill"></div></div>
+  </div>
+  <button id="stop" class="btn-icon" title="Stop">◼</button>
+  <button id="fullscreen" class="btn-icon" title="Fullscreen">⛶</button>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
