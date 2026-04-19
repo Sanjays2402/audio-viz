@@ -10,27 +10,37 @@
 <canvas id="canvas"></canvas>
 <div id="overlay" class="overlay">
   <div class="brand">🎵 <strong>AudioViz</strong></div>
-  <p class="tag">Real-time audio visualizer. Grant mic access to start.</p>
-  <button id="start" class="btn primary">Start</button>
+  <p class="tag">Real-time audio visualizer · 7 modes · 6 color schemes</p>
+  <button id="start" class="btn primary">Start Listening</button>
+  <p class="kbd-hint">Press <kbd>1</kbd>-<kbd>7</kbd> modes · <kbd>C</kbd> color · <kbd>F</kbd> fullscreen · <kbd>H</kbd> hide UI</p>
 </div>
 <div id="controls" class="controls hidden">
   <div class="mode-bar">
-    <button class="mode active" data-mode="bars">Spectrum</button>
-    <button class="mode" data-mode="wave">Waveform</button>
-    <button class="mode" data-mode="particles">Particles</button>
-    <button class="mode" data-mode="circular">Circular</button>
-    <button class="mode" data-mode="mirror">Mirror</button>
+    <button class="mode active" data-mode="bars"><span class="modenum">1</span>Spectrum</button>
+    <button class="mode" data-mode="wave"><span class="modenum">2</span>Waveform</button>
+    <button class="mode" data-mode="particles"><span class="modenum">3</span>Particles</button>
+    <button class="mode" data-mode="circular"><span class="modenum">4</span>Circular</button>
+    <button class="mode" data-mode="mirror"><span class="modenum">5</span>Mirror</button>
+    <button class="mode" data-mode="galaxy"><span class="modenum">6</span>Galaxy</button>
+    <button class="mode" data-mode="tunnel"><span class="modenum">7</span>Tunnel</button>
   </div>
   <div class="sensitivity">
-    <label>Sensitivity</label>
+    <label>Gain</label>
     <input type="range" id="sens" min="1" max="100" value="50">
   </div>
-  <div class="level">
+  <div class="level" title="Volume level">
     <span>VOL</span>
     <div class="level-bar"><div id="level-fill" class="level-fill"></div></div>
   </div>
-  <button id="stop" class="btn-icon" title="Stop">◼</button>
-  <button id="fullscreen" class="btn-icon" title="Fullscreen">⛶</button>
+  <div class="bpm" title="Detected tempo">
+    <span>BPM</span>
+    <span id="bpm" class="bpm-val">—</span>
+  </div>
+  <div class="divider"></div>
+  <button id="colorBtn" class="btn-icon" title="Cycle color scheme (C)">🎨</button>
+  <button id="screenshot" class="btn-icon" title="Screenshot">📸</button>
+  <button id="fullscreen" class="btn-icon" title="Fullscreen (F)">⛶</button>
+  <button id="stop" class="btn-icon danger" title="Stop">◼</button>
 </div>
 <script src="app.js"></script>
 </body>
